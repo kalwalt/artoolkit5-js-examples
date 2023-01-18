@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artoolkit5-js multi example</title>
+</head>
+<body>
+    <script src="../../src/dist/ARToolkit.js"></script>
+    <script>
+        console.log(ARToolkit);
+        ARToolkit.ARController.initWithDimensions(640, 480, "../../src/data/camera_para.dat")
+        .then((arController) => {
+            console.log(arController);
+            arController.setPatternDetectionMode(artoolkit.AR_TEMPLATE_MATCHING_MONO_AND_MATRIX);
+            arController.loadMultiMarker('/examples/data/multi/marker.dat').then(multi => {console.log(multi);})
+        })
+    </script>
+</body>
+</html>

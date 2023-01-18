@@ -1,0 +1,3 @@
+[submodule "src"]
+	path = src
+	url = https://github.com/AR-js-org/artoolkit5-js.git
